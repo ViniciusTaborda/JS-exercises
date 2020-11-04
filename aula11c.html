@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Detran PR</title>
+</head>
+
+<style>
+
+     *{
+          background-color: rgb(121, 121, 121);
+          color: white;
+     }
+
+</style>
+
+<body>
+     <h1>Sistema de multas</h1>
+     Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> Km/h
+     <br>
+     <input type="button" value="Verificar" onclick="calcular()">
+
+     <div id="res">
+
+     </div>
+
+     <script>
+
+
+          function calcular(){
+               var txtv = window.document.getElementById('txtvel');
+               var res = window.document.querySelector('div#res');
+               var vel = Number(txtv.value);
+
+               res.innerHTML = `<h2>Sua velocidade atual é de <strong>${vel}</strong> Km/h</h2>`;
+               res.innerHTML += `<h2> Dirija sempre com cinto de segurança! </h2>`
+               
+               if(vel > 60){
+               res.innerHTML += `<h2> Velocidade maior que 60km/h. MULTADO! </h2>`
+               }else {
+                    res.innerHTML += `<h2> Vai com Deus meu filho! </h2>`
+
+               }
+          }
+
+     </script>
+
+</body>
+</html>
